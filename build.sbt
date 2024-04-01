@@ -18,7 +18,8 @@ lazy val sharedSettings = Seq(
 
 val akkaVersion = "2.9.2"
 val ahcVersion = "1.9.40"
-val jSoupVersion = "1.8.3"
+val jSoupVersion = "1.17.2"
+val logbackVersion =  "1.4.14"
 
 lazy val webCrawler = (project in file("."))
   .aggregate(core)
@@ -30,6 +31,7 @@ lazy val core = (project in file("core"))
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-actor" % akkaVersion,
       "com.ning" % "async-http-client" % ahcVersion,
-      "org.jsoup" % "jsoup" % jSoupVersion
+      "org.jsoup" % "jsoup" % jSoupVersion,
+      "ch.qos.logback" % "logback-classic" % logbackVersion,
     )
   )
